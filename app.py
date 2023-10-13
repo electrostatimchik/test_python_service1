@@ -3,13 +3,13 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///employees.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://myuser:mypassword@84.38.180.99:5432'
 
 db = SQLAlchemy(app)
 
 
 class Employee(db.Model):
-    d = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50))
     position = db.Column(db.String(50))
 
